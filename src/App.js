@@ -1,10 +1,14 @@
-import logo from './logo.svg';
+import Home from './containers/Home';
+import Credits from './containers/Credits';
+
 
 function App() {
   return (
     <div className="App">
-      <>Hello Team: Please Get Working on Your Task ASAP, let me know if you have any questions
-      This should leave you with a blank canvas to get working.</>
+
+      <Home></Home>
+      <Credits></Credits>
+
     </div>
   );
 }
