@@ -26,11 +26,10 @@ const TextOverlay = styled.h1`
   top: 503px
   left: 44px
   font-family: Times;
-  font-size: 75px;
   line-height: 88px;
   letter-spacing: 0.06em;
   text-align: left;
-
+  word-spacing: 5px;
 `;
 
 const TextOverlay2 = styled.h1`
