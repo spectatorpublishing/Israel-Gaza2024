@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import coverCollage from '../images/coverPage.png'
+import SpecLogoHeader from '../components/SpecLogoHeader';
 
 
 const FullPageImage = styled.div`
@@ -11,10 +12,10 @@ const FullPageImage = styled.div`
   position: relative; /* This is required for absolute positioning of children */
 `;
 
+
 const TextOverlay = styled.h1`
   position: absolute;
-  bottom: 100px;
-  left: 0; 
+  bottom: 500px;
   color: white; 
   font-size: 2rem; 
   padding-left: 1rem; 
@@ -34,20 +35,24 @@ const TextOverlay = styled.h1`
 
 const TextOverlay2 = styled.h1`
   position: absolute;
-  bottom: 0;
-  left: 0; 
   color: white; 
-  font-size: 2rem; 
-  padding-left: 1rem; 
-  padding-bottom: 1rem; 
-  margin: 0; 
+  font-family: Times;
+  font-size: 10rem;  
+  width: 780.6px;
+  height: 242.51px;
+  top: 596.64px;
+  left: 45.56px;
+  gap: 0px;
+  opacity: 0px;
+
 `;
 
 
 const Home = () => {
   return (
     <FullPageImage>
-      <TextOverlay>THE ISRAEL-HAMAS</TextOverlay>
+      <SpecLogoHeader/>
+      
       <TextOverlay2>WAR</TextOverlay2>
     </FullPageImage>
 
@@ -55,3 +60,4 @@ const Home = () => {
 };
 
 export default Home;
+
