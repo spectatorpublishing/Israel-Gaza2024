@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import coverCollage from '../images/coverPage.png'
+import SpecLogoHeader from '../components/SpecLogoHeader';
 
 
 const FullPageImage = styled.div`
@@ -11,13 +12,20 @@ const FullPageImage = styled.div`
   position: relative; /* This is required for absolute positioning of children */
 `;
 
+
 const TextOverlay = styled.h1`
   position: absolute;
-  bottom: 100px; /* Adjusted position */
-  left: 44px; /* Adjusted position */
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 75px;
+  bottom: 500px;
+  color: white; 
+  font-size: 2rem; 
+  padding-left: 1rem; 
+  padding-bottom: 1rem; 
+  margin: 0; 
+  width: 918px
+  height: 82px
+  top: 503px
+  left: 44px
+  font-family: Times;
   line-height: 88px;
   letter-spacing: 0.06em;
   text-align: left;
@@ -26,19 +34,24 @@ const TextOverlay = styled.h1`
 
 const TextOverlay2 = styled.h1`
   position: absolute;
-  bottom: 50px; /* Position it higher than TextOverlay to avoid overlap */
-  left: 44px; /* Align with the left of TextOverlay */
-  color: white;
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 75px; /* Same font size as TextOverlay for consistency */
-  text-align: left;
+  color: white; 
+  font-family: Times;
+  font-size: 10rem;  
+  width: 780.6px;
+  height: 242.51px;
+  top: 596.64px;
+  left: 45.56px;
+  gap: 0px;
+  opacity: 0px;
+
 `;
 
 
 const Home = () => {
   return (
     <FullPageImage>
-      <TextOverlay>THE ISRAEL-HAMAS</TextOverlay>
+      <SpecLogoHeader/>
+      
       <TextOverlay2>WAR</TextOverlay2>
     </FullPageImage>
 
@@ -46,3 +59,4 @@ const Home = () => {
 };
 
 export default Home;
+
