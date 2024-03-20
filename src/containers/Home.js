@@ -13,34 +13,25 @@ const FullPageImage = styled.div`
 
 const TextOverlay = styled.h1`
   position: absolute;
-  bottom: 100px;
-  left: 0; 
-  color: white; 
-  font-size: 2rem; 
-  padding-left: 1rem; 
-  padding-bottom: 1rem; 
-  margin: 0; 
-  width: 918px
-  height: 82px
-  top: 503px
-  left: 44px
-  font-family: Times;
+  bottom: 100px; /* Adjusted position */
+  left: 44px; /* Adjusted position */
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
   font-size: 75px;
   line-height: 88px;
   letter-spacing: 0.06em;
   text-align: left;
-
+  word-spacing: 5px;
 `;
 
 const TextOverlay2 = styled.h1`
   position: absolute;
-  bottom: 0;
-  left: 0; 
-  color: white; 
-  font-size: 2rem; 
-  padding-left: 1rem; 
-  padding-bottom: 1rem; 
-  margin: 0; 
+  bottom: 50px; /* Position it higher than TextOverlay to avoid overlap */
+  left: 44px; /* Align with the left of TextOverlay */
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 75px; /* Same font size as TextOverlay for consistency */
+  text-align: left;
 `;
 
 
