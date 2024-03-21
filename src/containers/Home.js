@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import coverCollage from '../images/coverPage.png'
 import SpecLogoHeader from '../components/SpecLogoHeader';
+import ArticleTemplate from '../components/LeftArticleTemplate';
 
 
 const FullPageImage = styled.div`
@@ -9,7 +10,7 @@ const FullPageImage = styled.div`
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  position: relative; /* This is required for absolute positioning of children */
+  position: relative; 
 `;
 
 
@@ -51,7 +52,6 @@ const Home = () => {
   return (
     <FullPageImage>
       <SpecLogoHeader/>
-      
       <TextOverlay2>WAR</TextOverlay2>
     </FullPageImage>
 

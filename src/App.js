@@ -1,14 +1,13 @@
 import Home from './containers/Home';
-import Credits from './containers/Credits';
-
+import HomePage from './containers/HomePage';
 
 function App() {
   return (
     <div className="App">
 
       <Home></Home>
+      <HomePage></HomePage>
       
-      <Credits></Credits>
 
     </div>
   );
