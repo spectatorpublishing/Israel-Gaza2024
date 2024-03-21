@@ -19,7 +19,6 @@ const VerticalLine = styled.div`
     width: 36px; 
     background-color: white; 
     margin: 0 20px;
-
 `;
 
 const TopHeader = styled.div`
