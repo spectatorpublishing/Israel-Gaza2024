@@ -1,13 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
-import coverCollage from '../images/coverPage.png'
-import SpecLogoHeader from './SpecLogoHeader';
 
+const Image = styled.img`
+  height: 350px;
+  width: 600px;
+`
 
-
-const PrintEdition = () => {
+const PrintEdition = ({cover}) => {
   return (
-    <p>IMAGE HERE</p>
+    <div>
+      <p>FRONT COVER IMAGE HERE</p>
+      <Image src={cover.image} />
+      <div>{cover.title}</div>
+    </div>
   );
 };
 
