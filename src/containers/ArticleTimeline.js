@@ -12,21 +12,26 @@ const PageWrapper = styled.div`
     color: white;
 `;
 
-
+const Month = styled.div`
+    font-family: "DM Serif Text", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 70px;
+`;
 
 const ArticleTimeline = () => {
     return (
         <PageWrapper>
             {Object.entries(articleList).map(([month, articles]) => (
                     <div key={month}>
-                        <h2>{month}</h2>
+                        <PrintEdition></PrintEdition>
+                        <Month>{month}</Month>
                         {articles.map((article, index) => (
-                            <div key={index}>
-                                <div src={article.image_url} />
-                                <div href={article.article_link} target="_blank">{article.article_title}</div>
-                                <div>{article.article_authors}</div>
-                                <div>{article.article_date}</div>
-                                <div>{article.article_section}</div>
+                            <div key = {index}>
+                                {article.article_section === "Opinion" ? 
+                                    <LeftArticleTemplate article={article} /> :
+                                    <RightArticleTemplate article={article} />
+                                }
                             </div>
                         ))}
                     </div>
@@ -36,4 +41,3 @@ const ArticleTimeline = () => {
 };
 
 export default ArticleTimeline;
-
