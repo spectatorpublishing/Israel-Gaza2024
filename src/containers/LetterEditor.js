@@ -1,8 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import LeftArticleTemplate from '../components/LeftArticleTemplate';
-import RightArticleTemplate from '../components/RightArticleTemplate';
-import PrintEdition from '../components/PrintEdition';
+import styled from 'styled-components';
 
 const PageWrapper = styled.div`
     height: fit-content;
@@ -118,10 +115,10 @@ text-align: left;
 margin-top:30px;
 `;
 
-const HomePage = () => {
+const LetterEditor = () => {
     return (
         <PageWrapper>
-            <VerticalLine />
+            
             <Page>
             
             <Column>
@@ -153,21 +150,9 @@ const HomePage = () => {
 
             </Column>
             </Page>
-
-            <Page>
-                <Column>
-                    <LeftArticleTemplate></LeftArticleTemplate>
-                    <PrintEdition></PrintEdition>
-                </Column>
-
-                <Column>
-                    <RightArticleTemplate></RightArticleTemplate>
-                    <PrintEdition></PrintEdition>
-                </Column>
-            </Page>
         </PageWrapper>
     );
 };
 
-export default HomePage;
+export default LetterEditor;
 
