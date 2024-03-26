@@ -8,6 +8,8 @@ import { articleList } from '../data/article_list';
 const PageWrapper = styled.div`
     height: fit-content;
     position: relative;
+    background-color: black;
+    color: white;
 `;
 
 
