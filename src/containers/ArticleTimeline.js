@@ -31,6 +31,22 @@ const MonthTitle = styled.div`
     font-size: 70px;
 `;
 
+const LeftArticleDiv = styled.div`
+    width: 30%;
+    margin-left: 300px;
+`;
+
+const RightArticleDiv = styled.div`
+    width: 30%;
+    margin-right: 300px;
+`;
+
+const ArticleContainer = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: ${props => props.isRight ? 'flex-end' : 'flex-start'};
+`;
+
 const ArticleTimeline = () => {
     return (
         <PageWrapper>
@@ -44,12 +60,17 @@ const ArticleTimeline = () => {
                     </MonthTop>
                     
                     {articles.map((article, index) => (
-                        <div key={index}>
+                        <ArticleContainer key={index} isRight={article.article_section !== "Opinion"}>
                             {article.article_section === "Opinion" ? 
-                                <LeftArticleTemplate article={article} /> :
-                                <RightArticleTemplate article={article} />
+                                <LeftArticleDiv>
+                                    <LeftArticleTemplate article={article} /> 
+                                </LeftArticleDiv>
+                                :
+                                <RightArticleDiv>
+                                    <RightArticleTemplate article={article} />
+                                </RightArticleDiv>
                             }
-                        </div>
+                        </ArticleContainer>
                     ))}
                 </div>
             ))}
