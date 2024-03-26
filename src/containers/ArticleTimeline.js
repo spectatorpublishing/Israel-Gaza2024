@@ -32,13 +32,13 @@ const MonthTitle = styled.div`
 `;
 
 const LeftArticleDiv = styled.div`
-    width: 30%;
-    margin-left: 300px;
+    width: 45%;
+    margin-left: 25px;
 `;
 
 const RightArticleDiv = styled.div`
-    width: 30%;
-    margin-right: 300px;
+    width: 45%;
+    margin-right: 25px;
 `;
 
 const ArticleContainer = styled.div`
