@@ -7,7 +7,7 @@ import ArticleTemplate from '../components/LeftArticleTemplate';
 
 const FullPageImage = styled.div`
   background-image: url(${coverCollage});
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   object-fit: cover;
   position: relative; 
@@ -22,10 +22,10 @@ const TextOverlay = styled.h1`
   padding-left: 1rem; 
   padding-bottom: 1rem; 
   margin: 0; 
-  width: 918px
-  height: 82px
-  top: 503px
-  left: 44px
+  width: 918px;
+  height: 82px;
+  top: 503px;
+  left: 44px;
   font-family: Times;
   line-height: 88px;
   letter-spacing: 0.06em;

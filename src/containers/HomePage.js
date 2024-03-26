@@ -59,10 +59,8 @@ font-weight: 400;
 line-height: 50.69px;
 letter-spacing: -0.02em;
 text-align: left;
-
 margin-left:95px;
-margin-top:41px
-
+margin-top:41px;
 `;
 
 const Name = styled.div`
@@ -76,7 +74,7 @@ letter-spacing: -0.02em;
 text-align: left;
 
 margin-left:95px;
-margin-top:34px
+margin-top:34px;
 
 `;
 
@@ -114,12 +112,10 @@ text-align: left;
 margin-top:30px;
 `;
 
-
-
-
 const HomePage = () => {
     return (
-        <Page>
+        <div>
+            <Page>
             
             <Column>
                 <TopHeader>Letter</TopHeader>
@@ -131,17 +127,8 @@ const HomePage = () => {
                         <Role>Managing Editor</Role>
                     <Name>Name</Name>
                         <Role>Publisher</Role>
-
-
-            <LeftArticleTemplate></LeftArticleTemplate>
-            <PrintEdition></PrintEdition>
-
             </Column>
-
-            
-
             <VerticalLine />  
-
             <Column>
                 <TopBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A mollis amet vitae sed purus, 
                     semper ullamcorper augue vitae. Hac pretium urna, tempus sit quam suspendisse maecenas et. 
@@ -157,12 +144,23 @@ const HomePage = () => {
                 Gravida facilisis sagittis eget facilisi molestie amet, ut pellentesque morbi.
                 </Body>
 
-                <RightArticleTemplate></RightArticleTemplate>
-                <PrintEdition></PrintEdition>
             </Column>
+            </Page>
+            
+            <Page>
+                <Column>
+                    <LeftArticleTemplate></LeftArticleTemplate>
+                    <PrintEdition></PrintEdition>
+                </Column>
 
+                <VerticalLine />  
 
-        </Page>
+                <Column>
+                    <RightArticleTemplate></RightArticleTemplate>
+                    <PrintEdition></PrintEdition>
+                </Column>
+            </Page>
+        </div>
     );
 };
 
