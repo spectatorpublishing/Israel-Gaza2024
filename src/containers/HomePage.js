@@ -4,6 +4,10 @@ import LeftArticleTemplate from '../components/LeftArticleTemplate';
 import RightArticleTemplate from '../components/RightArticleTemplate';
 import PrintEdition from '../components/PrintEdition';
 
+const PageWrapper = styled.div`
+    height: fit-content;
+    position: relative;
+`;
 
 const Page = styled.div`
     display: flex;
@@ -17,9 +21,11 @@ const Column = styled.div`
 
 const VerticalLine = styled.div`
     width: 36px; 
+    height: 100%;
     background-color: white; 
     margin: 0 20px;
-
+    position: absolute;
+    right: 50%;
 `;
 
 const TopHeader = styled.div`
@@ -114,7 +120,8 @@ margin-top:30px;
 
 const HomePage = () => {
     return (
-        <div>
+        <PageWrapper>
+            <VerticalLine />
             <Page>
             
             <Column>
@@ -128,7 +135,7 @@ const HomePage = () => {
                     <Name>Name</Name>
                         <Role>Publisher</Role>
             </Column>
-            <VerticalLine />  
+            
             <Column>
                 <TopBody>Lorem ipsum dolor sit amet, consectetur adipiscing elit. A mollis amet vitae sed purus, 
                     semper ullamcorper augue vitae. Hac pretium urna, tempus sit quam suspendisse maecenas et. 
@@ -146,21 +153,19 @@ const HomePage = () => {
 
             </Column>
             </Page>
-            
+
             <Page>
                 <Column>
                     <LeftArticleTemplate></LeftArticleTemplate>
                     <PrintEdition></PrintEdition>
                 </Column>
 
-                <VerticalLine />  
-
                 <Column>
                     <RightArticleTemplate></RightArticleTemplate>
                     <PrintEdition></PrintEdition>
                 </Column>
             </Page>
-        </div>
+        </PageWrapper>
     );
 };
 

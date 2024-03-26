@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import coverCollage from '../images/coverPage.png'
 import SpecLogoHeader from '../components/SpecLogoHeader';
 import ArticleTemplate from '../components/LeftArticleTemplate';
+import HomePage from './HomePage';
 
 
 const FullPageImage = styled.div`
@@ -50,11 +51,13 @@ const TextOverlay2 = styled.h1`
 
 const Home = () => {
   return (
-    <FullPageImage>
-      <SpecLogoHeader/>
-      <TextOverlay2>WAR</TextOverlay2>
-    </FullPageImage>
-
+    <div>
+      <FullPageImage>
+        <SpecLogoHeader/>
+        <TextOverlay2>WAR</TextOverlay2>
+      </FullPageImage>
+      <HomePage></HomePage>
+    </div>
   );
 };
 
