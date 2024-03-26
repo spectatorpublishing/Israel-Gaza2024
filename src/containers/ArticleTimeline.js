@@ -12,7 +12,19 @@ const PageWrapper = styled.div`
     color: white;
 `;
 
-const Month = styled.div`
+const MonthTop = styled.div`
+    display: flex;
+    flex-direction: ${props => props.isEven ? 'row' : 'row-reverse'};
+    align-items: center;
+    margin-bottom: 50px; /* Adjust as needed */
+    width: 100%;
+    justify-content: space-around;
+`;
+
+const MonthText = styled.div`
+`;
+
+const MonthTitle = styled.div`
     font-family: "DM Serif Text", serif;
     font-weight: 400;
     font-style: normal;
@@ -22,20 +34,25 @@ const Month = styled.div`
 const ArticleTimeline = () => {
     return (
         <PageWrapper>
-            {Object.entries(articleList).map(([month, articles]) => (
-                    <div key={month}>
+            {Object.entries(articleList).map(([month, articles], index) => (
+                <div key={month}>
+                    <MonthTop isEven={index % 2 === 0}>
                         <PrintEdition></PrintEdition>
-                        <Month>{month}</Month>
-                        {articles.map((article, index) => (
-                            <div key = {index}>
-                                {article.article_section === "Opinion" ? 
-                                    <LeftArticleTemplate article={article} /> :
-                                    <RightArticleTemplate article={article} />
-                                }
-                            </div>
-                        ))}
-                    </div>
-                ))}
+                        <MonthText>
+                            <MonthTitle>{month}</MonthTitle>
+                        </MonthText>
+                    </MonthTop>
+                    
+                    {articles.map((article, index) => (
+                        <div key={index}>
+                            {article.article_section === "Opinion" ? 
+                                <LeftArticleTemplate article={article} /> :
+                                <RightArticleTemplate article={article} />
+                            }
+                        </div>
+                    ))}
+                </div>
+            ))}
         </PageWrapper>
     );
 };
