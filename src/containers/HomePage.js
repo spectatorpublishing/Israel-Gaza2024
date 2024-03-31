@@ -133,7 +133,12 @@ const HomePage = () => {
                         <Role>Publisher</Role>
 
 
-            <LeftArticleTemplate></LeftArticleTemplate>
+                        <LeftArticleTemplate
+                        date="JAN 02"
+                        headline="'Joy is canceled': Columbia University Apartheid Divest holds protest during Tree Lighting Celebration"
+                        authors="DAKSHA PILLAI AND JOSEPH ZULOAGA"
+                        />
+
             <PrintEdition></PrintEdition>
 
             </Column>

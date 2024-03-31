@@ -7,7 +7,7 @@ import SpecLogoHeader from './SpecLogoHeader';
 
 const RightArticleTemplate = () => {
   return (
-    <p>Article Appear Here</p>
+    <p>right article here</p>
   );
 };
 
