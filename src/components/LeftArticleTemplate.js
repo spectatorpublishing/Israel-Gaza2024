@@ -87,11 +87,14 @@ const Author = styled.p`
         width:70%;
     }
 `;
+const Image = styled.img`
+  height: 100px;
+  width: 200px;
+`
 
-
-const LeftArticleTemplate = () => {
-  return (
-
+const LeftArticleTemplate = ({article}) => {
+return (
+    
   <ArticleWrap>
     <Link href={article.article_link} target="_blank" rel="noreferrer">
         <ImageWrap>
@@ -103,9 +106,7 @@ const LeftArticleTemplate = () => {
         </ArticleText>
     </Link>
 </ArticleWrap>
-
-    
-  );
+);
 };
 
 export default LeftArticleTemplate;
