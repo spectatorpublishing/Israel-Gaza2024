@@ -1,22 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Image = styled.img`
-  height: 100px;
-  width: 200px;
-`
+const ArticleContainer = styled.div`
+  display: flex;
+  background: black;
+  color: white;
+  padding: 20px;
+`;
 
-const LeftArticleTemplate = ({article}) => {
+const TextColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  flex-grow: 1; 
+  padding-right: 20px; 
+`;
+
+const Title = styled.h1`
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+`;
+
+const Author = styled.div`
+  font-size: 16px;
+  margin-top: auto; 
+`;
+
+const ImageColumn = styled.div`
+  display: flex;
+  left-padding: 20px;
+`;
+
+const Image = styled.img`
+  width: 240px; 
+  height: 128px;
+  object-fit: cover;
+  padding-left: 40px; 
+`;
+
+const LeftArticleTemplate = ({ article }) => {
   return (
-    <div>
-        <p>Left Article</p>
-        <Image src={article.image_url} />
-        <div href={article.article_link} target="_blank">{article.article_title}</div>
-        <div>{article.article_authors}</div>
-        <div>{article.article_date}</div>
-        <div>{article.article_section}</div>
-    </div>
+    <ArticleContainer>
+      <TextColumn>
+        <Title>{article.article_title}</Title>
+        <Author>By {article.article_authors}</Author>
+      </TextColumn>
+      <ImageColumn>
+        <Image src={article.image_url} alt="Article" />
+      </ImageColumn>
+    </ArticleContainer>
   );
 };
 
 export default LeftArticleTemplate;
+
