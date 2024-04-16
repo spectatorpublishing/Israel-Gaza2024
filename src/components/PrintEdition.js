@@ -1,18 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Image = styled.img`
-  height: 350px;
-  width: 600px;
-`
+const Wrapper = styled.div`
+  display: flex;
+  width: 553px;
+  height: 441px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 9px;
+  flex-shrink: 0;
+  margin-left: 36px; // Added missing semicolon
+`;
 
-const PrintEdition = ({cover}) => {
+const Image = styled.img`
+  width: 553px;
+  height: 369px;
+  flex-shrink: 0;
+  background: lightgray 50% / cover no-repeat; // Moved CSS from the component to here
+`;
+
+const Title = styled.div`
+  width: 553px;
+  height: 63px;
+  flex-shrink: 0;
+  color: var(--article-text, #F0EFEB);
+  font-family: Bitter;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`;
+
+const PrintEdition = ({ cover }) => {
   return (
-    <div>
-      <p>FRONT COVER IMAGE HERE</p>
-      <Image src={cover.image} />
-      <div>{cover.title}</div>
-    </div>
+    <Wrapper>
+      <Image src={cover.image} alt="Cover Image" />
+      <Title>{cover.title}</Title>
+    </Wrapper>
   );
 };
 
