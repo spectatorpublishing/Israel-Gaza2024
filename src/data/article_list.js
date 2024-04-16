@@ -4,9 +4,9 @@ export const articleList = {
         {
             image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/3U4BZLK6QRGJPDGMNCAZPGLODI.jpeg",
             article_title: "Doxing Resource Group connects affiliates to privacy scrubbing, legal advice, and support services",
-            article_authors: "Sara Huddleston and Shea Vance",
+            article_authors: "SARA HUDDLESTON and SHEA VANCE",
             article_link: "https://www.columbiaspectator.com/news/2023/12/23/doxing-resource-group-connects-affiliates-to-privacy-scrubbing-legal-advice-and-support-services/",
-            article_date: "12/23/2023",
+            article_month: "12/23/2023",
             article_section: "University News"
         },
         {
@@ -28,7 +28,7 @@ export const articleList = {
         {
             image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/YSTOX6JBLBFBRPQGNQEMQDS764.jpg",
             article_title: "An ‘exclusive’ opportunity: Columbia’s upcoming global center in Tel Aviv",
-            article_authors: "Maryam Alwan",
+            article_authors: "MARYAM ALWAN",
             article_link: "https://www.columbiaspectator.com/opinion/2023/12/19/an-exclusive-opportunity-columbias-upcoming-global-center-in-tel-aviv/",
             article_date: "12/19/2023",
             article_section: "Opinion"
@@ -80,7 +80,7 @@ export const articleList = {
         {
             image_url: "https://cloudfront-us-east-1.images.arcpublishing.com/spectator/YSTOX6JBLBFBRPQGNQEMQDS764.jpg",
             article_title: "An ‘exclusive’ opportunity: Columbia’s upcoming global center in Tel Aviv",
-            article_authors: "Maryam Alwan",
+            article_authors: "MARYAM ALWAN",
             article_link: "https://www.columbiaspectator.com/opinion/2023/12/19/an-exclusive-opportunity-columbias-upcoming-global-center-in-tel-aviv/",
             article_date: "12/19/2023",
             article_section: "Opinion"
