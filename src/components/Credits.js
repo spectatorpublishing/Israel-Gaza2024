@@ -65,8 +65,6 @@ font-size: 20px;
 font-style: normal;
 font-weight: 300;
 line-height: normal;
-
-
 margin-left:254px;
 margin-top:13px;
 `;
@@ -81,9 +79,6 @@ font-size: 20px;
 font-style: normal;
 font-weight: 300;
 line-height: normal;
-
-
-
 margin-top:13px;
 `;
 
@@ -103,7 +98,6 @@ font-weight: 400;
 line-height: 34.49px;
 margin-top:200px;
 margin-left:254px;
-
 
 `;
 

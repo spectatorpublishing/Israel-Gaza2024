@@ -5,10 +5,9 @@ const ArticleContainer = styled.div`
   display: inline-flex;
   justify-content: flex-end;
   align-items: flex-start;
-  gap: 10px; // Increased gap for a larger layout
-  margin-bottom: 100px; // You can adjust this as needed
+  gap: 10px;
+  margin-bottom: 100px; 
   margin-left: 10px;
-  // Add width if needed, or leave as is to auto-adjust to children's size
 `;
 
 const TextColumn = styled.div`
@@ -16,29 +15,30 @@ const TextColumn = styled.div`
   flex-direction: column;
   justify-content: space-between; 
   flex-grow: 1; 
-  padding-right: 20px; // Increased padding for a larger layout
+  padding-right: 20px;
 `;
 
 const Title = styled.div`
-  width: 300px; // Adjusted width
-  height: auto; // Height auto for dynamic text content
+  width: 300px; 
+  
+  height: auto;
 
   color: var(--article-text, #F0EFEB);
-  font-family: Bitter,; // Ensure to have a fallback font
-  font-size: 22px; // Larger font size
+  font-family: Bitter;
+  font-size: 22px; /
   font-style: normal;
   font-weight: 700;
-  line-height: 1.4; // Normal line height
+  line-height: 1.4;
 
   margin-bottom: 70px;
 `;
 
 const Author = styled.div`
-  width: 300px; // Adjusted width
-  height: auto; // Height auto for dynamic text content
+  width: 300px;
+  height: auto; /
 
   color: var(--article-text, #F0EFEB);
-  font-family: "Josefin Sans", sans-serif; // Ensure to have a fallback font
+  font-family: "Josefin Sans", sans-serif;
   font-size: 12px; // Larger font size
   font-style: normal;
   font-weight: 400;
