@@ -27,13 +27,17 @@ const PrintEditionWrapper = styled.div`
 `;
 
 const MonthText = styled.div`
+
 `;
 
 const MonthTitle = styled.div`
-    font-family: "DM Serif Text", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 70px;
+color: var(--white, #FFF);
+text-align: right;
+font-family: "DM Serif Text";
+font-size: 85px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
 `;
 
 const LeftArticleDiv = styled.div`
