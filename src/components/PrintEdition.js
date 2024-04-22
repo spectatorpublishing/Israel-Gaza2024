@@ -10,14 +10,14 @@ const Wrapper = styled.div`
   align-items: flex-start;
   gap: 9px;
   flex-shrink: 0;
-  margin-left: 36px; // Added missing semicolon
+  margin-left: 36px;
 `;
 
 const Image = styled.img`
   width: 553px;
   height: 369px;
   flex-shrink: 0;
-  background: lightgray 50% / cover no-repeat; // Moved CSS from the component to here
+  background: lightgray 50% 
 `;
 
 const Title = styled.div`

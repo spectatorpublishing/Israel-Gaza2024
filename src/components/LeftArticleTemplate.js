@@ -4,42 +4,37 @@ import styled from 'styled-components';
 const ArticleContainer = styled.div`
   display: inline-flex;
   justify-content: flex-end;
-  align-items: flex-start;
-  gap: 10px;
+
+  gap: 5px;
   margin-bottom: 100px; 
-  margin-left: 10px;
+  margin-left: 62px;
 `;
 
 const TextColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  flex-grow: 1; 
-  padding-right: 20px;
+align-items: flex-start;
 `;
 
 const Title = styled.div`
-  width: 300px; 
-  
-  height: auto;
+  width: 256px;
+  height: 63px;
 
   color: var(--article-text, #F0EFEB);
   font-family: Bitter;
-  font-size: 22px; /
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
-  line-height: 1.4;
+  line-height: normal;
 
   margin-bottom: 70px;
 `;
 
 const Author = styled.div`
-  width: 300px;
-  height: auto; /
+  width: 222px;
+  height: 17.821px;
 
   color: var(--article-text, #F0EFEB);
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 12px; // Larger font size
+  font-family: "Josefin Sans";
+  font-size: 10px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -50,37 +45,38 @@ const ImageColumn = styled.div`
   justify-content: flex-end;
   align-items: flex-start;
   gap: 10px;
+  margin-top:5.7px
 `;
 
 const Image = styled.img`
-  width: 300px; 
-  height: 180px;
-  object-fit: cover; 
+width: 208px;
+height: 139px;
 `;
 
 const DateWrapper = styled.div`
-  width: 50px;
-  height: 80px; 
-  flex-shrink: 0;
+width: 42px;
+height: 66px;
+flex-shrink: 0;
+margin-top:15px
 `;
 
 const Month = styled.div`
-  color: var(--white, #FFF);
-  text-align: center;
-  font-family: "PT Serif Caption", serif; 
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4;
+color: var(--white, #FFF);
+text-align: center;
+font-family: "PT Serif Caption";
+font-size: 15px;
+font-style: normal;
+font-weight: 400;
+line-height: 1;
 `;
 
 const Day = styled.div`
-  color: var(--white, #FFF);
-  font-family: "PT Serif Caption", serif;
-  font-size: 40px; 
-  font-style: normal;
-  font-weight: 400;
-  line-height: 1.4;
+color: var(--white, #FFF);
+font-family: "PT Serif Caption";
+font-size: 35px;
+font-style: normal;
+font-weight: 400;
+line-height: 30px;
 `;
 
 
@@ -92,8 +88,8 @@ const LeftArticleTemplate = ({ article }) => {
     <a href={article.article_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
       <ArticleContainer>
         <TextColumn>
-          <Title>{article.article_section.toUpperCase()}: {article.article_title}</Title>
-          <Author>BY {article.article_authors.toUpperCase()}</Author>
+        <Title>{article.article_section.toUpperCase()}: {article.article_title}</Title>
+        <Author>BY {article.article_authors.toUpperCase()}</Author>
         </TextColumn>
         <ImageColumn>
           <Image src={article.image_url} alt="Article" />
