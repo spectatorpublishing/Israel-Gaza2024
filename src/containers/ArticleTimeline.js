@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import LeftArticleTemplate from '../components/LeftArticleTemplate';
+import LeftArticleTemplate from '../components/LeftArticleTemplate'; 
 import RightArticleTemplate from '../components/RightArticleTemplate';
 import PrintEdition from '../components/PrintEdition';
 import { articleList } from '../data/article_list';
