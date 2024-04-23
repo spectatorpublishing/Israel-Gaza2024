@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import Heading from './Heading';
 import LetterEditor from './LetterEditor';
-import ArticleTimeline from './ArticleTimeline'
-import Credits from  '../components/Credits'
+import ArticleTimeline from './ArticleTimeline';
+import Credits from  '../components/Credits';
+
 const Wrapper = styled.div`
   background-color: black;
 `;
@@ -19,9 +20,9 @@ const VerticalLine = styled.div`
     background-color: #FFFFFF; 
     margin: 0 20px;
     position: absolute;
-    right: 50%;
+    right: 48%;
     z-index: 1;
-    margin-top:253px
+    margin-top:253px;
 `;
 
 const BeginningVerticalLine = styled.div`
@@ -30,10 +31,10 @@ const BeginningVerticalLine = styled.div`
     background-color: #FFF; 
     margin: 0 20px;
     position: absolute;
-    right: 50%;
+    right: 48%;
     z-index: 1;
-    background: linear-gradient(180deg, #000 28%, #FFF 100%);
-    margin-top: 106px
+    background: linear-gradient(180deg, #000 1%, #FFF 100%);
+    margin-top: 106px;
 `;
 
 const EndingVerticalLine = styled.div`
@@ -42,11 +43,9 @@ const EndingVerticalLine = styled.div`
     background-color: #FFF; 
     margin: 0 20px;
     position: absolute;
-    right: 50%;
+    right: 48%;
     z-index: 1;
-    background: linear-gradient(180deg, #FFF 28%, #000 100%);
-
-    
+    background: linear-gradient(180deg, #FFF 1%, #000 100%);
 `;
 
 const Home = () => {
@@ -62,8 +61,6 @@ const Home = () => {
       <EndingVerticalLine/>
       <Credits></Credits>
     </Wrapper>
-    
-
   );
 };
 

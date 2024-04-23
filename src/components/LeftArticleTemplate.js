@@ -2,85 +2,71 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ArticleContainer = styled.div`
-  display: inline-flex;
-  justify-content: flex-end;
-
-  gap: 5px;
-  margin-bottom: 100px; 
-  margin-left: 62px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 100px;
 `;
 
 const TextColumn = styled.div`
-align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
 `;
 
 const Title = styled.div`
-  width: 256px;
-  height: 63px;
-
-  color: var(--article-text, #F0EFEB);
+  color: #F0EFEB;
   font-family: Bitter;
-  font-size: 18px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-
-  margin-bottom: 70px;
 `;
 
 const Author = styled.div`
-  width: 222px;
-  height: 17.821px;
-
-  color: var(--article-text, #F0EFEB);
+  color: #F0EFEB;
   font-family: "Josefin Sans";
-  font-size: 10px;
+  font-size: 1rem;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 `;
 
-const ImageColumn = styled.div`
-  display: inline-flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 10px;
-  margin-top:5.7px
+const ImageColumn = styled.div` 
+  width: 36%;
+  margin-left: 2rem;
+  margin-right: 0.5rem;
 `;
 
 const Image = styled.img`
-width: 208px;
-height: 139px;
+  width: 100%;
+  height: 100%;
 `;
 
 const DateWrapper = styled.div`
-width: 42px;
-height: 66px;
-flex-shrink: 0;
-margin-top:15px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const Month = styled.div`
-color: var(--white, #FFF);
-text-align: center;
-font-family: "PT Serif Caption";
-font-size: 15px;
-font-style: normal;
-font-weight: 400;
-line-height: 1;
+  color: white;
+  font-family: "PT Serif Caption";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 400;
+  width: fit-content;
+  margin-bottom: 0.5rem;
 `;
 
 const Day = styled.div`
-color: var(--white, #FFF);
-font-family: "PT Serif Caption";
-font-size: 35px;
-font-style: normal;
-font-weight: 400;
-line-height: 30px;
+  color: white;
+  font-family: "PT Serif Caption";
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 30px;
 `;
-
-
-
 
 
 const LeftArticleTemplate = ({ article }) => {

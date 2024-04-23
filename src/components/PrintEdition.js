@@ -2,34 +2,22 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  display: flex;
-  width: 553px;
-  height: 441px;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 9px;
-  flex-shrink: 0;
-  margin-left: 36px;
+  width: 100%;
+  margin: auto;
 `;
 
 const Image = styled.img`
-  width: 553px;
-  height: 369px;
-  flex-shrink: 0;
-  background: lightgray 50% 
+  width: 100%;
+  height: 100%;
+  background: lightgray 50%;
 `;
 
 const Title = styled.div`
-  width: 553px;
-  height: 63px;
-  flex-shrink: 0;
-  color: var(--article-text, #F0EFEB);
+  color: #F0EFEB;
   font-family: Bitter;
-  font-size: 18px;
+  font-size: 1.5rem;
   font-style: normal;
   font-weight: 700;
-  line-height: normal;
 `;
 
 const PrintEdition = ({ cover }) => {
