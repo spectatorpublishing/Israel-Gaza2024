@@ -1,10 +1,11 @@
-import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import LeftArticleTemplate from '../components/LeftArticleTemplate'; 
-import RightArticleTemplate from '../components/RightArticleTemplate';
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import MobileArticleTemplate from '../components/MobileArticleTemplate'; 
 import PrintEdition from '../components/PrintEdition';
 import { articleList } from '../data/article_list';
 import { coverList } from '../data/front_cover_list';
+import ShowToggle from '../images/show-arrow.png';
+import HideToggle from '../images/no-show-arrow.png';
 
 const PageWrapper = styled.div`
     height: fit-content;
@@ -19,23 +20,17 @@ const PageWrapper = styled.div`
 
 const MonthTop = styled.div`
     display: flex;
-    /* flex-direction: ${props => props.isEven ? 'row' : 'row-reverse'}; */
     flex-direction: column-reverse;
-    align-items: center;
     margin: auto;
     width: 90%;
-    gap: 15rem;
 `;
 
 const PrintEditionWrapper = styled.div`
-    width: 50%;
+    width: 100%;
     margin-bottom: 8rem;
 `;
 
 const MonthText = styled.div`
-    width: 50%;
-    display: flex;
-    justify-content: center;
 `;
 
 const MonthTitle = styled.div`
@@ -45,51 +40,101 @@ const MonthTitle = styled.div`
     font-size: 82px;
 `;
 
-const LeftArticleDiv = styled.div`
-    width: 45%;
-    margin-left: 3%;
+const Toggle = styled.div`
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
 `;
 
-const RightArticleDiv = styled.div`
-    width: 45%;
-    margin-right: 25px;
+const ToggleText = styled.div`
+    font-family: Bitter;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+`;
+
+const Arrow = styled.div`
+`;
+
+const Image = styled.img`
 `;
 
 const ArticleContainer = styled.div`
     width: 100%;
-    display: flex;
-    justify-content: ${props => props.isRight ? 'flex-end' : 'flex-start'};
+    height: 100%;
 `;
 
 const ArticleTimeline = () => {
+    const [toggleStates, setToggleStates] = useState({});
+
+    const toggleOpinion = (month) => {
+        setToggleStates(prevState => ({
+            ...prevState,
+            [month]: {
+                ...prevState[month],
+                opinion: !prevState[month]?.opinion
+            }
+        }));
+    };
+
+    const toggleNews = (month) => {
+        setToggleStates(prevState => ({
+            ...prevState,
+            [month]: {
+                ...prevState[month],
+                news: !prevState[month]?.news
+            }
+        }));
+    };
+
     return (
         <PageWrapper>
-            {Object.entries(articleList).map(([month, articles], index) => (
-                <div key={month}>
-                    <MonthTop isEven={index % 2 === 0}>
-                        <PrintEditionWrapper>
-                            <PrintEdition cover={coverList[month]} />
-                        </PrintEditionWrapper>
-                        <MonthText>
-                            <MonthTitle>{month}</MonthTitle>
-                        </MonthText>
-                    </MonthTop>
-                    
-                    {articles.map((article, index) => (
-                        <ArticleContainer key={index} isRight={article.article_section !== "Opinion"}>
-                            {article.article_section === "Opinion" ? 
-                                <LeftArticleDiv>
-                                    <LeftArticleTemplate article={article} /> 
-                                </LeftArticleDiv>
-                                :
-                                <RightArticleDiv>
-                                    <RightArticleTemplate article={article} />
-                                </RightArticleDiv>
+            {Object.entries(articleList).map(([month, articles], index) =>{
+                if (!toggleStates[month]) {
+                    setToggleStates(prevState => ({
+                        ...prevState,
+                        [month]: { opinion: false, news: false }
+                    }));
+                }
+
+                return (
+                    <div key={month}>
+                        <MonthTop isEven={index % 2 === 0}>
+                            <PrintEditionWrapper>
+                                <PrintEdition cover={coverList[month]} />
+                            </PrintEditionWrapper>
+                            <MonthText>
+                                <MonthTitle>{month}</MonthTitle>
+                            </MonthText>
+                        </MonthTop>
+
+                        <Toggle onClick={() => toggleOpinion(month)}>
+                            <ToggleText>OPINION</ToggleText>
+                            <Arrow><Image src={toggleStates[month]?.opinion ?  ShowToggle : HideToggle}  alt="Toggle-Opinion Arrow" /></Arrow>
+                        </Toggle>
+
+                        <Toggle onClick={() => toggleNews(month)}>
+                            <ToggleText>NEWS</ToggleText>
+                            <Arrow><Image src={toggleStates[month]?.news ? ShowToggle : HideToggle} alt="Toggle-News Arrow" /></Arrow>
+                        </Toggle>
+                        
+                        {articles.map((article, index) => {
+                            if ((toggleStates[month]?.opinion && article.article_section === "Opinion") ||
+                                (toggleStates[month]?.news && article.article_section !== "Opinion")) {
+                                return (
+                                    <ArticleContainer key={index} >
+                                        <MobileArticleTemplate article={article} />
+                                    </ArticleContainer>
+                                );
                             }
-                        </ArticleContainer>
-                    ))}
-                </div>
-            ))}
+                            return null;
+                        })}
+                    </div>
+                )
+            })}
         </PageWrapper>
     );
 };

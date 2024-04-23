@@ -1,5 +1,5 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import LeftArticleTemplate from '../components/LeftArticleTemplate'; 
 import RightArticleTemplate from '../components/RightArticleTemplate';
 import PrintEdition from '../components/PrintEdition';
