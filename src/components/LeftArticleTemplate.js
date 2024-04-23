@@ -1,21 +1,24 @@
+// LeftArticleTemplate.js
 import React from 'react';
-import styled from 'styled-components';
-
-const Image = styled.img`
-  height: 100px;
-  width: 200px;
-`
+import { ArticleBlock, DateBlock, ImageBlock, TitleBlock, AuthorBlock } from './ArticleBlockStyled';
 
 const LeftArticleTemplate = ({article}) => {
+  const date = new Date(article.article_date); // Assumes article_date is a valid date string
+  const month = date.toLocaleString('default', { month: 'short' }).toUpperCase();
+  const day = date.getDate();
+
   return (
-    <div>
-        <p>Left Article</p>
-        <Image src={article.image_url} />
-        <div href={article.article_link} target="_blank">{article.article_title}</div>
-        <div>{article.article_authors}</div>
-        <div>{article.article_date}</div>
-        <div>{article.article_section}</div>
-    </div>
+    <ArticleBlock>
+      <DateBlock>
+        <div>{month}</div>
+        <div>{day}</div>
+      </DateBlock>
+      <ImageBlock src={article.image_url} alt={`Article image for ${article.article_title}`} />
+      <div>
+        <TitleBlock>{article.article_title}</TitleBlock>
+        <AuthorBlock>{article.article_authors}</AuthorBlock>
+      </div>
+    </ArticleBlock>
   );
 };
 

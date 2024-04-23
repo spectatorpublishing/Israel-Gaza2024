@@ -4,13 +4,15 @@ import styled from 'styled-components';
 const Image = styled.img`
   height: 350px;
   width: 600px;
+  object-fit: cover; // Ensures images are nicely fitted into the dimensions
 `
 
-const PrintEdition = ({cover}) => {
+const PrintEdition = ({ cover }) => {
+  const imageUrl = cover.image !== "Not Provided" ? cover.image : "path_to_default_image.jpg"; // Provide a default image path
+
   return (
     <div>
-      <p>FRONT COVER IMAGE HERE</p>
-      <Image src={cover.image} />
+      <Image src={imageUrl} alt={`Cover for ${cover.title}`} />
       <div>{cover.title}</div>
     </div>
   );
