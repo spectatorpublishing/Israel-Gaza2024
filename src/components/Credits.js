@@ -34,7 +34,7 @@ const Section = styled.div`
 
 
 const Name = styled.div`
-    width: 500%;
+    width: 200%;
     color: white;
     font-family: "Noto Sans KR",;
     font-size: 20px;
