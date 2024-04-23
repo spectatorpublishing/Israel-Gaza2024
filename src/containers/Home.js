@@ -4,6 +4,7 @@ import Heading from './Heading';
 import LetterEditor from './LetterEditor';
 import ArticleTimeline from './ArticleTimeline';
 import Credits from  '../components/Credits';
+import MobileTimeline from '../containers/MobileTimeline';
 
 const Wrapper = styled.div`
   background-color: black;
@@ -23,6 +24,10 @@ const VerticalLine = styled.div`
     right: 48%;
     z-index: 1;
     margin-top:253px;
+
+    @media only screen and (max-width: 1023px){
+        display: none;
+    }
 `;
 
 const BeginningVerticalLine = styled.div`
@@ -35,6 +40,10 @@ const BeginningVerticalLine = styled.div`
     z-index: 1;
     background: linear-gradient(180deg, #000 1%, #FFF 100%);
     margin-top: 106px;
+
+    @media only screen and (max-width: 1023px){
+        display: none;
+    }
 `;
 
 const EndingVerticalLine = styled.div`
@@ -46,6 +55,10 @@ const EndingVerticalLine = styled.div`
     right: 48%;
     z-index: 1;
     background: linear-gradient(180deg, #FFF 1%, #000 100%);
+
+    @media only screen and (max-width: 1023px){
+        display: none;
+    }
 `;
 
 const Home = () => {
@@ -57,6 +70,7 @@ const Home = () => {
         <VerticalLine />
         <LetterEditor />
         <ArticleTimeline />
+        <MobileTimeline />
       </LowerWrapper>
       <EndingVerticalLine/>
       <Credits></Credits>

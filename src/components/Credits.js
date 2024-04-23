@@ -19,6 +19,10 @@ const SectAndNames = styled.div`
     width: 100%;
     height: 200rem;
     margin-top: 2rem;
+
+    @media only screen and (max-width: 1023px){
+        height: 850rem;
+    }
 `;
 
 const Section = styled.div`

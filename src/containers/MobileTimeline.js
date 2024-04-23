@@ -12,14 +12,15 @@ const PageWrapper = styled.div`
     background-color: black;
     color: white;
 
-    @media only screen and (max-width: 1023px){
+    @media only screen and (min-width: 1023px){
         display: none;
     }
 `;
 
 const MonthTop = styled.div`
     display: flex;
-    flex-direction: ${props => props.isEven ? 'row' : 'row-reverse'};
+    /* flex-direction: ${props => props.isEven ? 'row' : 'row-reverse'}; */
+    flex-direction: column-reverse;
     align-items: center;
     margin: auto;
     width: 90%;
