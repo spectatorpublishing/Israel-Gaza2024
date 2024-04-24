@@ -7,16 +7,42 @@ const Page = styled.div`
     color: white;
     margin-bottom: 10rem;
     gap: 6rem;
+
+    @media only screen and (max-width: 1023px){
+        margin-bottom: 0rem;
+        margin-top: 9rem;
+        padding-top: 4rem;
+        border-right: 1rem solid white;
+        position: relative; 
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%; 
+            height: 1rem; 
+            background: white;
+        }
+    }
 `;
 
 const ColumnOne = styled.div`
     flex: 1; 
     margin-top: 10rem;
+
+    @media only screen and (max-width: 1023px){
+        margin-top: 0rem;
+    }
 `;
 
 const ColumnTwo = styled.div`
     flex: 1; 
     margin-top: 10rem;
+
+    @media only screen and (max-width: 1023px){
+        margin-top: 0rem;
+    }
 `;
 
 const TopHeader = styled.div`

@@ -12,10 +12,28 @@ const PageWrapper = styled.div`
     position: relative;
     background-color: black;
     color: white;
+    position: relative; 
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50%; 
+        height: 1rem; 
+        background: white;
+    }
 
     @media only screen and (min-width: 1023px){
         display: none;
     }
+`;
+
+const MonthWrapper= styled.div`
+    border-top: 1rem solid white; 
+    border-${props => props.isEven ? 'left' : 'right'}: 1rem solid white; //this is correct, ignore red line
+    padding-${props => props.isEven ? 'right' : 'left'}: 2rem; //this is correct, ignore red line
+    padding-bottom: 3rem;
 `;
 
 const MonthTop = styled.div`
@@ -45,8 +63,9 @@ const Toggle = styled.div`
     color: black;
     display: flex;
     justify-content: space-between;
+    flex-direction: ${props => props.isEven ? 'row' : 'row-reverse'};
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 `;
 
 const ToggleText = styled.div`
@@ -101,29 +120,23 @@ const ArticleTimeline = () => {
                 }
 
                 return (
-                    <div key={month}>
+                    <MonthWrapper isEven={index % 2 === 0} key={month}>
                         <MonthTop isEven={index % 2 === 0}>
                             <PrintEditionWrapper>
                                 <PrintEdition cover={coverList[month]} />
                             </PrintEditionWrapper>
                             <MonthText>
-                                <MonthTitle>{month}</MonthTitle>
+                                <MonthTitle>{month.substring(0, 3).toUpperCase()}</MonthTitle>
                             </MonthText>
                         </MonthTop>
 
-                        <Toggle onClick={() => toggleOpinion(month)}>
+                        <Toggle isEven={index % 2 === 0} onClick={() => toggleOpinion(month)}>
                             <ToggleText>OPINION</ToggleText>
                             <Arrow><Image src={toggleStates[month]?.opinion ?  ShowToggle : HideToggle}  alt="Toggle-Opinion Arrow" /></Arrow>
                         </Toggle>
 
-                        <Toggle onClick={() => toggleNews(month)}>
-                            <ToggleText>NEWS</ToggleText>
-                            <Arrow><Image src={toggleStates[month]?.news ? ShowToggle : HideToggle} alt="Toggle-News Arrow" /></Arrow>
-                        </Toggle>
-                        
                         {articles.map((article, index) => {
-                            if ((toggleStates[month]?.opinion && article.article_section === "Opinion") ||
-                                (toggleStates[month]?.news && article.article_section !== "Opinion")) {
+                            if ((toggleStates[month]?.opinion && article.article_section === "Opinion") ) {
                                 return (
                                     <ArticleContainer key={index} >
                                         <MobileArticleTemplate article={article} />
@@ -132,7 +145,23 @@ const ArticleTimeline = () => {
                             }
                             return null;
                         })}
-                    </div>
+
+                        <Toggle isEven={index % 2 === 0} onClick={() => toggleNews(month)}>
+                            <ToggleText>NEWS</ToggleText>
+                            <Arrow><Image src={toggleStates[month]?.news ? ShowToggle : HideToggle} alt="Toggle-News Arrow" /></Arrow>
+                        </Toggle>
+                        
+                        {articles.map((article, index) => {
+                            if ((toggleStates[month]?.news && article.article_section !== "Opinion")) {
+                                return (
+                                    <ArticleContainer key={index} >
+                                        <MobileArticleTemplate article={article} />
+                                    </ArticleContainer>
+                                );
+                            }
+                            return null;
+                        })}
+                    </MonthWrapper>
                 )
             })}
         </PageWrapper>

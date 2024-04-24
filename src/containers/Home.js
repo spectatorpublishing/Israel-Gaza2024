@@ -42,7 +42,10 @@ const BeginningVerticalLine = styled.div`
     margin-top: 106px;
 
     @media only screen and (max-width: 1023px){
-        display: none;
+      width: 1rem;
+      margin: 0px;
+      right: 50%;
+      height: 160px;
     }
 `;
 
@@ -57,7 +60,10 @@ const EndingVerticalLine = styled.div`
     background: linear-gradient(180deg, #FFF 1%, #000 100%);
 
     @media only screen and (max-width: 1023px){
-        display: none;
+      width: 1rem;
+      margin: 0px;
+      right: 50%;
+      margin-top: -2px;
     }
 `;
 

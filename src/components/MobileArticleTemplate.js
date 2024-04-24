@@ -15,7 +15,8 @@ const BackgroundImage = styled.div`
 `;
 
 const ArticleContainer = styled.div`
-  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 100%;
   height: 23rem;
   position: relative;
@@ -39,7 +40,7 @@ const Text = styled.div`
 const Title = styled.div`
   color: #F0EFEB;
   font-family: Bitter;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
