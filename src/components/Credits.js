@@ -10,6 +10,9 @@ const HeaderDiv = styled.div`
 const PageWrapper = styled.div`
     position: relative;
     margin: 0rem 10rem;
+    @media only screen and (max-width: 1023px){
+        display: none;
+    }
 `;
 
 const SectAndNames = styled.div`

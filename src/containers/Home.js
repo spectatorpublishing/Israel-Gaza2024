@@ -6,6 +6,7 @@ import ArticleTimeline from './ArticleTimeline';
 import Credits from  '../components/Credits';
 import MobileTimeline from '../containers/MobileTimeline';
 import LetterEditorMobile from '../containers/LetterEditoMobile.js'
+import CreditsMobile from '../components/CreditsMobile.js'
 
 const Wrapper = styled.div`
   background-color: black;
@@ -83,6 +84,7 @@ const Home = () => {
       </LowerWrapper>
       <EndingVerticalLine/>
       <Credits></Credits>
+      <CreditsMobile></CreditsMobile>
     </Wrapper>
   );
 };
