@@ -5,8 +5,8 @@ const SpecLogo = styled.div`
     justify-content: center;
     display: flex;
     align-items: center;
-    padding-top: 3.813rem;
-    margin-bottom: 1.75rem;
+    padding-top: 0;
+    margin-bottom: 0;
 `;
 
 const Image = styled.img`
@@ -15,6 +15,9 @@ const Image = styled.img`
     height: auto;
     @media only screen and (max-width: 768px){
         width: 17.5rem;
+    }
+    @media only screen and (max-width: 600px){
+        width: 15rem;
     }
 `;
 

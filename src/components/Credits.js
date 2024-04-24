@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { credits } from '../data/credits'
 
 const HeaderDiv = styled.div`
-    z-index: 10;
     color:white;
 `;
 
@@ -21,10 +20,9 @@ const SectAndNames = styled.div`
     flex-wrap: wrap;
     width: 100%;
     height: 200rem;
-    margin-top: 2rem;
-
+    grid-template-columns: 1fr 1fr 1fr;
+    display: grid;
     @media only screen and (max-width: 1023px){
-        
         height: 850rem;
     }
 `;
@@ -37,12 +35,11 @@ const Section = styled.div`
     font-style: normal;
     font-weight: 400;
     text-transform: uppercase;
-    margin-top:60px;
 `;
 
 
 const Name = styled.div`
-    width: 200%;
+    width:450%;
     color: white;
     font-family: "Noto Sans KR",;
     font-size: 20px;

@@ -18,7 +18,7 @@ const Page = styled.div`
 
 const Wrapper =  styled.div`
 width: 90%;
-padding-left: 1.67rem; //this is correct, ignore red line
+padding-left: 1.67rem; /
 }
 `;
 
@@ -63,7 +63,7 @@ const TopHeader = styled.div`
 `;
 
 const Name = styled.div`
-    width: 362.274px;
+    width: 100%;
     height: 34.918px;
     flex-shrink: 0;
 

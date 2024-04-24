@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 const LowerWrapper = styled.div`
   position: relative;
   height: fit-content;
+  
 `;
 
 const VerticalLine = styled.div`
