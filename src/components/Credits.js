@@ -21,6 +21,7 @@ const SectAndNames = styled.div`
     margin-top: 2rem;
 
     @media only screen and (max-width: 1023px){
+        
         height: 850rem;
     }
 `;

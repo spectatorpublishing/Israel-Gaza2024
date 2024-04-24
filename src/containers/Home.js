@@ -5,6 +5,7 @@ import LetterEditor from './LetterEditor';
 import ArticleTimeline from './ArticleTimeline';
 import Credits from  '../components/Credits';
 import MobileTimeline from '../containers/MobileTimeline';
+import LetterEditorMobile from '../containers/LetterEditoMobile.js'
 
 const Wrapper = styled.div`
   background-color: black;
@@ -46,6 +47,7 @@ const BeginningVerticalLine = styled.div`
       margin: 0px;
       right: 50%;
       height: 160px;
+      display:none
     }
 `;
 
@@ -75,6 +77,7 @@ const Home = () => {
       <LowerWrapper>
         <VerticalLine />
         <LetterEditor />
+        <LetterEditorMobile/>
         <ArticleTimeline />
         <MobileTimeline />
       </LowerWrapper>

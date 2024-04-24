@@ -25,6 +25,12 @@ const Page = styled.div`
             background: white;
         }
     }
+
+    @media only screen and (max-width: 1023px){
+        display: none;
+    }
+
+
 `;
 
 const ColumnOne = styled.div`

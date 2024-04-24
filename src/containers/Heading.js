@@ -5,23 +5,24 @@ import SpecLogoHeader from '../components/SpecLogoHeader';
 
 const FullPageImage = styled.div`
   background-image: url(${coverCollage});
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
-  position: relative; 
+  width: 100%; 
+  height: 100%;
+  flex-shrink: 0;
 `;
 
+
 const TextOverlay = styled.h1`
-  position: absolute;
-  color: white; 
-  font-family: Times;
-  font-size: 10rem;  
-  width: 780.6px;
-  height: 242.51px;
-  top: 596.64px;
-  left: 45.56px;
-  gap: 0px;
-  opacity: 0px;
+width: 346px;
+height: 37px;
+flex-shrink: 0;
+
+color: var(--white, #FFF);
+font-family: Times;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 1.92px;
 
 `;
 
