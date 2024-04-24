@@ -1,18 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Image = styled.img`
-  height: 350px;
-  width: 600px;
-`
+const Wrapper = styled.div`
+  width: 100%;
+  margin: auto;
+`;
 
-const PrintEdition = ({cover}) => {
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  background: lightgray 50%;
+`;
+
+const Title = styled.div`
+  color: #F0EFEB;
+  font-family: Bitter;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 700;
+`;
+
+const PrintEdition = ({ cover }) => {
   return (
-    <div>
-      <p>FRONT COVER IMAGE HERE</p>
-      <Image src={cover.image} />
-      <div>{cover.title}</div>
-    </div>
+    <Wrapper>
+      <Image src={cover.image} alt="Cover Image" />
+      <Title>{cover.title}</Title>
+    </Wrapper>
   );
 };
 

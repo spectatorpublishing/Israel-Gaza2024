@@ -1,26 +1,50 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ArticleContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 100px;
+const BackgroundImage = styled.div`
+  background-image: url(${props => props.image});
+  background-position: center;
+  background-size: cover;
+  filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 `;
 
-const TextColumn = styled.div`
+const ArticleContainer = styled.div`
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 100%;
+  height: 23rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+`;
+
+const Text = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 0.5rem;
+  margin: 0 1rem 1rem 1rem;
 `;
 
 const Title = styled.div`
   color: #F0EFEB;
   font-family: Bitter;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  margin-bottom: 1rem;
 `;
 
 const Author = styled.div`
@@ -30,37 +54,27 @@ const Author = styled.div`
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-`;
-
-const ImageColumn = styled.div` 
-  width: 36%;
-  margin-right: 2rem;
-  margin-left: 0.5rem;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
+  margin-top: 1rem;
 `;
 
 const DateWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  text-align: right;
+  margin: 2rem;
 `;
 
 const Month = styled.div`
-  color: white;
+  color: #FFB300;
   font-family: "PT Serif Caption";
   font-size: 1.5rem;
   font-style: normal;
   font-weight: 400;
-  width: fit-content;
   margin-bottom: 0.5rem;
 `;
 
 const Day = styled.div`
-  color: white;
+  color: #FFB300;
   font-family: "PT Serif Caption";
   font-size: 3rem;
   font-style: normal;
@@ -69,25 +83,22 @@ const Day = styled.div`
 `;
 
 
-const RightArticleTemplate = ({ article }) => {
+const MobileArticleTemplate = ({ article }) => {
   return (
     <a href={article.article_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
       <ArticleContainer>
+        <BackgroundImage image={article.image_url} />
         <DateWrapper>
           <Month>JAN</Month>
           <Day>05</Day>
         </DateWrapper>
-        <ImageColumn>
-          <Image src={article.image_url} alt="Article" />
-        </ImageColumn>
-        <TextColumn>
+        <Text>
           <Title>{article.article_section.toUpperCase()}: {article.article_title}</Title>
           <Author>BY {article.article_authors.toUpperCase()}</Author>
-        </TextColumn>
+        </Text>
       </ArticleContainer>
     </a>
   );
 };
 
-export default RightArticleTemplate;
-
+export default MobileArticleTemplate;

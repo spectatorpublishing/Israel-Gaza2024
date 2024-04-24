@@ -1,6 +1,6 @@
 import React from 'react';
-import styled, { createGlobalStyle } from 'styled-components';
-import LeftArticleTemplate from '../components/LeftArticleTemplate';
+import styled from 'styled-components';
+import LeftArticleTemplate from '../components/LeftArticleTemplate'; 
 import RightArticleTemplate from '../components/RightArticleTemplate';
 import PrintEdition from '../components/PrintEdition';
 import { articleList } from '../data/article_list';
@@ -11,34 +11,42 @@ const PageWrapper = styled.div`
     position: relative;
     background-color: black;
     color: white;
+
+    @media only screen and (max-width: 1023px){
+        display: none;
+    }
 `;
 
 const MonthTop = styled.div`
     display: flex;
     flex-direction: ${props => props.isEven ? 'row' : 'row-reverse'};
     align-items: center;
-    margin-bottom: 50px; /* Adjust as needed */
-    width: 100%;
-    justify-content: space-around;
+    margin: auto;
+    width: 90%;
+    gap: 15rem;
 `;
 
 const PrintEditionWrapper = styled.div`
-    margin-left: -150px;
+    width: 50%;
+    margin-bottom: 8rem;
 `;
 
 const MonthText = styled.div`
+    width: 50%;
+    display: flex;
+    justify-content: center;
 `;
 
 const MonthTitle = styled.div`
     font-family: "DM Serif Text", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 70px;
+    font-size: 82px;
 `;
 
 const LeftArticleDiv = styled.div`
     width: 45%;
-    margin-left: 25px;
+    margin-left: 3%;
 `;
 
 const RightArticleDiv = styled.div`

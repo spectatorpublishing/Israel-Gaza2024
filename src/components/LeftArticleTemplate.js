@@ -90,24 +90,27 @@ const Author = styled.p`
 const Image = styled.img`
   height: 100px;
   width: 200px;
-`
+` 
+const LeftArticleTemplate = ({ article }) => {
+  return (
+    <a href={article.article_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+      <ArticleContainer>
+        <TextColumn>
+        <Title>{article.article_section.toUpperCase()}: {article.article_title}</Title>
+        <Author>BY {article.article_authors.toUpperCase()}</Author>
+        </TextColumn>
+        <ImageColumn>
+          <Image src={article.image_url} alt="Article" />
+        </ImageColumn>
+        <DateWrapper>
+          <Month>JAN</Month>
+          <Day>05</Day>
+        </DateWrapper>
+      </ArticleContainer>
+    </a>
+  );
+};
 
-const LeftArticleTemplate = ({article}) => {
-return (
-    
-  <ArticleWrap>
-    <Link href={article.article_link} target="_blank" rel="noreferrer">
-        <ImageWrap>
-            <ArticleImg src={article.image_url} />
-        </ImageWrap>
-        <ArticleText>
-            <Title>{article.article_title}</Title>
-            <Author>{article.article_authors}</Author>
-        </ArticleText>
-    </Link>
-</ArticleWrap>
-);
-
-}
 
 export default LeftArticleTemplate;
+
