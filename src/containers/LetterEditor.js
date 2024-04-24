@@ -3,134 +3,101 @@ import styled from 'styled-components';
 
 const Page = styled.div`
     display: flex;
+    flex-direction: row;
     background-color: black;
     color: white;
-    margin-bottom: 10rem;
-    gap: 6rem;
-
-    @media only screen and (max-width: 1023px){
-        margin-bottom: 0rem;
-        margin-top: 9rem;
-        padding-top: 4rem;
-        border-right: 1rem solid white;
-        position: relative; 
-
-        &::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%; 
-            height: 1rem; 
-            background: white;
-        }
+    margin: 2rem;
+    gap: 2rem;
+    @media only screen and (max-width: 1023px) {
+        flex-direction: column;
+        margin: 1rem;
     }
 `;
 
-const ColumnOne = styled.div`
-    flex: 1; 
-    margin-top: 10rem;
-
-    @media only screen and (max-width: 1023px){
-        margin-top: 0rem;
+const Column = styled.div`
+    flex: 1;
+    padding: 2rem;
+    @media only screen and (max-width: 1023px) {
+        padding: 1rem;
     }
 `;
-
-const ColumnTwo = styled.div`
-    flex: 1; 
-    margin-top: 10rem;
-
-    @media only screen and (max-width: 1023px){
-        margin-top: 0rem;
-    }
+const VerticalLine = styled.div`
+  width: 1rem;
+  background-color: white;
+  height: 100%;
+  z-index: 0;
+  position: relative; 
+ 
 `;
 
-const TopHeader = styled.div`
-    font-family: Playfair Display;
-    font-size: 82px;
+
+const Header = styled.div`
+    z-index: 10000;   
+font-family: Playfair Display;
+    font-size: 4vw;
     font-weight: 400;
     letter-spacing: 0.1em;
-    text-align: left;
-    margin-left: 89px;
-    width: 25rem;
-`;
-
-const TopName = styled.div`
-    font-family: "Nothing You Could Do", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 38px;
-    font-weight: 400;
-    letter-spacing: -0.02em;
-    text-align: left;
-    margin-left:95px;
-    margin-top:41px;
+    text-align: center;
+    margin-bottom: 2rem;
+    @media only screen and (max-width: 1023px) {
+        font-size: 8vw;
+    }
 `;
 
 const Name = styled.div`
     font-family: "Nothing You Could Do", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 38px;
-    font-weight: 400;
+    font-size: 3vw;
     letter-spacing: -0.02em;
     text-align: left;
-    margin-left:95px;
-    margin-top:34px;
+    margin: 1rem 0;
+    @media only screen and (max-width: 1023px) {
+        font-size: 6vw;
+    }
 `;
 
 const Role = styled.div`
     font-family: Bodoni Moda;
-    font-size: 18px;
-    font-weight: 400;
+    font-size: 2vw;
     text-align: left;
-    width: 180px;
-    height: 29px;
-    top: 1452px;
-    left: 95px;
-    gap: 0px;
-    opacity: 0px;
-    margin-left:95px;
+    margin-bottom: 1rem;
+    @media only screen and (max-width: 1023px) {
+        font-size: 4vw;
+    }
 `;
 
-const Letter = styled.div`
+const Text = styled.div`
     font-family: Noto Serif SC;
-    font-size: 32px;
+    font-size: 2vw;
     text-align: left;
     margin-bottom: 2rem;
-    width: 85%;
+    @media only screen and (max-width: 1023px) {
+        font-size: 4vw;
+    }
 `;
 
-const LetterEditor = () => {
-    return (
-        <Page>
-            <ColumnOne>
-                <TopHeader>Letter From the Editor</TopHeader>
-                    <TopName>Name</TopName>
-                        <Role>Editor in Chief</Role>
-                    <Name>Name</Name>
-                        <Role>Managing Editor</Role>
-                    <Name>Name</Name>
-                        <Role>Publisher</Role>
-            </ColumnOne>
-            <ColumnTwo>
-                <Letter>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. A mollis amet vitae sed purus, 
-                    semper ullamcorper augue vitae. Hac pretium urna, tempus sit quam suspendisse maecenas et. 
-                    Egestas neque sollicitudin rhoncus vitae at ipsum pulvinar faucibus. Facilisi risus blandit egestas
-                    in dignissim et sapien faucibus. Tortor accumsan libero sed aliquam dui magna vitae, habitant egestas.
-                    Consectetur egestas tellus auctor interdum id gravida quis pellentesque. At amet nulla tellus orci gravida. 
-                    Egestas aenean mauris in velit. Fermentum consectetur augue et habitant commodo, libero odio.
-                </Letter>
-                <Letter>
-                    Id nascetur vel eu fermentum elementum ac cras enim. Dui habitant commodo consequat sit in molestie in id. 
-                    Ipsum volutpat etiam tristique fringilla. Tellus eu quis mauris massa tristique tortor, egestas luctus lacus. 
-                    Gravida facilisis sagittis eget facilisi molestie amet, ut pellentesque morbi.
-                </Letter>
-            </ColumnTwo>
-        </Page>
-    );
-};
+const LetterEditor = () => (
+    <Page>
+        <Column>
+            <Header>Letter From the Editor</Header>
+            <Name>Name</Name>
+            <Role>Editor in Chief</Role>
+            <Name>Name</Name>
+            <Role>Managing Editor</Role>
+            <Name>Name</Name>
+            <Role>Publisher</Role>
+        </Column>
+        <Column>
+            <Text>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. A mollis amet vitae sed purus,
+                semper ullamcorper augue vitae. Hac pretium urna, tempus sit quam suspendisse maecenas et.
+                Egestas neque sollicitudin rhoncus vitae at ipsum pulvinar faucibus.
+            </Text>
+            <Text>
+                Id nascetur vel eu fermentum elementum ac cras enim. Dui habitant commodo consequat sit in molestie in id.
+                Ipsum volutpat etiam tristique fringilla.
+            </Text>
+        </Column>
+    </Page>
+);
 
 export default LetterEditor;
-
