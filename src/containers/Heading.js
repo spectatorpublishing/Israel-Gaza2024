@@ -6,28 +6,76 @@ import SpecLogoHeader from '../components/SpecLogoHeader';
 const FullPageImage = styled.div`
   background-image: url(${coverCollage});
   width: 100%;
-  height: 880px;  // Make the height responsive to the viewport height
-  opacity: 1.5;      // Adjust opacity as needed, assuming you want it visible
-  display: flex;
+  height: 880px; 
+  opacity: 1.5;
+  position: relative; 
+  padding: 0;
+  margin: 0; 
+  overflow: hidden; 
 `;
 
 
-const TextOverlay = styled.h1`
+const TextOverlay = styled.div`
   width: 100%;
   color: white;
   font-family: 'Times';
-  font-size: calc(14vw + 14vh);  // Use a combination of viewport width and height for scalability
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1.92px;
   position: absolute;
-  top: 50%;
+  bottom: 0px;
+  margin-left: 45.56px;
+
+  font-size: 300px;
+
+  @media (max-width: 768px) {
+    font-size: 150px;
+    bottom: 0px;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 100px;
+    bottom: 0px;
+    margin-left: 10px;
+  }
+`;
+
+const TextOverlay2 = styled.div`
+  width: 100%;
+  color: var(--white, #FFF);
+  font-family: 'Times';
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 4.5px;
+  position: absolute;
+  bottom: 300px;
+  margin-left: 44px;
+
+  font-size: 75px;
+
+  @media (max-width: 768px) {
+    font-size: 50px;
+    bottom: 150px;
+    margin-left: 20px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 35px;
+    bottom: 100px;
+    margin-left: 20px;
+  }
 `;
 
 const Heading = () => {
   return (
     <FullPageImage>
+      
+      <TextOverlay2>THE ISRAEL-HAMAS</TextOverlay2>
+      <TextOverlay>WAR</TextOverlay>
+    
       <SpecLogoHeader />
     </FullPageImage>
   );

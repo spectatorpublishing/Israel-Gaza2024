@@ -5,6 +5,7 @@ const ArticleContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-bottom: 100px;
+  margin-right:10px
 `;
 
 const TextColumn = styled.div`
@@ -68,8 +69,23 @@ const Day = styled.div`
   line-height: 30px;
 `;
 
+const getMonthName = (monthNumber) => {
+  const date = new Date();
+  date.setMonth(monthNumber - 1);
+  return date.toLocaleString('default', { month: 'short' }).toUpperCase();
+};
+
 
 const LeftArticleTemplate = ({ article }) => {
+
+  const dateString = article.article_date || article.article_month;
+  const date = new Date(dateString);
+  const month = getMonthName(date.getMonth() + 1);
+  const day = date.getDate();
+
+
+
+
   return (
     <a href={article.article_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
       <ArticleContainer>
@@ -81,8 +97,8 @@ const LeftArticleTemplate = ({ article }) => {
           <Image src={article.image_url} alt="Article" />
         </ImageColumn>
         <DateWrapper>
-          <Month>JAN</Month>
-          <Day>05</Day>
+          <Month>{month}</Month>
+          <Day>{day}</Day>
         </DateWrapper>
       </ArticleContainer>
     </a>
