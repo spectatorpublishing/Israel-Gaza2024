@@ -68,7 +68,7 @@ const ArticleAuthor = styled.div`
   line-height: normal;
 `
 
-const Elispe = styled.div`
+const CircleContainer = styled.div`
 width: 97px;
 height: 88.62px;
 flex-shrink: 0;
@@ -130,9 +130,9 @@ const RightArticleTemplate = ({ article }) => {
       <ArticleContainer>
         <SectionContainer>SECTION | SUBSECTION</SectionContainer>
         <ImageContainer>
-          <Elispe>
+          <CircleContainer>
             <DateContainer> Jan <DateNumber> 05 </DateNumber></DateContainer>
-          </Elispe>
+          </CircleContainer>
           <StyledImage src={article.image_url}/>
         </ImageContainer>
         <ArticleTitle>ARTICLE TITLE HERE</ArticleTitle>
