@@ -75,15 +75,13 @@ const Home = () => {
   return (
     <Wrapper>
       <Heading/>
-      <BeginningVerticalLine/>
       <LowerWrapper>
-        <VerticalLine />
         <LetterEditor />
         <LetterEditorMobile/>
+        <VerticalLine/>
         <ArticleTimeline />
         <MobileTimeline />
       </LowerWrapper>
-      <EndingVerticalLine/>
       <Credits></Credits>
       <CreditsMobile></CreditsMobile>
     </Wrapper>

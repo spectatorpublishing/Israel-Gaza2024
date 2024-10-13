@@ -14,7 +14,6 @@ const FullPageImage = styled.div`
   overflow: hidden; 
 `;
 
-
 const TextOverlay = styled.div`
   width: 100%;
   color: white;
@@ -25,7 +24,7 @@ const TextOverlay = styled.div`
   letter-spacing: 1.92px;
   position: absolute;
   bottom: 0px;
-  margin-left: 45.56px;
+
 
   font-size: 300px;
 
@@ -52,7 +51,7 @@ const TextOverlay2 = styled.div`
   letter-spacing: 4.5px;
   position: absolute;
   bottom: 300px;
-  margin-left: 44px;
+  margin-left: 30px;
 
   font-size: 75px;
 
@@ -72,10 +71,11 @@ const TextOverlay2 = styled.div`
 const Heading = () => {
   return (
     <FullPageImage>
-      
-      <TextOverlay2>THE ISRAEL-HAMAS</TextOverlay2>
-      <TextOverlay>WAR</TextOverlay>
-    
+
+
+        <TextOverlay2>COLUMBIA IN</TextOverlay2>
+        <TextOverlay>CRISIS</TextOverlay>
+        
       <SpecLogoHeader />
     </FullPageImage>
   );

@@ -1,73 +1,113 @@
 import React from 'react';
 import styled from 'styled-components';
 
+
+
 const ArticleContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 100px;
-  margin-right:10px
+  width: 493px;
+  height: 423px;
+  flex-shrink: 0;
+`
+
+const ImageContainer = styled.div`
+  width: 493px;
+  height: 300.367px;
+  flex-shrink: 0;
+  position: relative;
+`
+
+const StyledImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  background-color: lightgray; /* Sets the background color */
+  background-position: 50%; /* Positions the background to the center */
 `;
 
-const TextColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 50%;
-`;
+const SectionContainer = styled.div`
+  width: 100%;
+  height: 27.306px;
+  flex-shrink: 0;
+  text-align: right;
 
-const Title = styled.div`
-  color: #F0EFEB;
+  color: var(--article-text, #F0EFEB);
   font-family: Bitter;
-  font-size: 1.5rem;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-`;
+`
 
-const Author = styled.div`
-  color: #F0EFEB;
+const ArticleTitle = styled.div`
+  width: 493px;
+  height: 29px;
+  flex-shrink: 0;
+  text-align: right;
+
+  color: var(--article-text, #F0EFEB);
+  font-family: Bitter;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+`
+
+const ArticleAuthor = styled.div`
+  width: 493px;
+  height: 37px;
+  flex-shrink: 0;
+  
+  text-align: right;
+  margin-top:17px;
+
+  color: var(--article-text, #F0EFEB);
   font-family: "Josefin Sans";
-  font-size: 1rem;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+`
+
+const Elispe = styled.div`
+width: 97px;
+height: 88.62px;
+flex-shrink: 0;
+border-radius: 50%;
+background-color: #000;
+position: absolute;
+
+margin-top: 13px;
+margin-left: 381px;
+
+display: flex;
+justify-content: center; 
+
 `;
 
-const ImageColumn = styled.div` 
-  width: 36%;
-  margin-left: 2rem;
-  margin-right: 0.5rem;
+const DateContainer = styled.div`
+width: 58px;
+height: 63.952px;
+flex-shrink: 0;
+
+color: #FFF;
+text-align: center;
+font-family: "PT Serif Caption";
+font-size: 20px;
+font-style: normal;
+font-weight: 400;
+line-height: 35px; 
 `;
 
-const Image = styled.img`
-  width: 100%;
-  height: 100%;
-`;
-
-const DateWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const Month = styled.div`
-  color: white;
+const DateNumber = styled.div`
+  color: #FFF;
   font-family: "PT Serif Caption";
-  font-size: 1.5rem;
+  font-size: 48px;
   font-style: normal;
   font-weight: 400;
-  width: fit-content;
-  margin-bottom: 0.5rem;
-`;
+  line-height: 40px;
+`
 
-const Day = styled.div`
-  color: white;
-  font-family: "PT Serif Caption";
-  font-size: 3rem;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 30px;
-`;
+
 
 const getMonthName = (monthNumber) => {
   const date = new Date();
@@ -76,7 +116,7 @@ const getMonthName = (monthNumber) => {
 };
 
 
-const LeftArticleTemplate = ({ article }) => {
+const RightArticleTemplate = ({ article }) => {
 
   const dateString = article.article_date || article.article_month;
   const date = new Date(dateString);
@@ -84,27 +124,29 @@ const LeftArticleTemplate = ({ article }) => {
   const day = date.getDate();
 
 
-
-
   return (
     <a href={article.article_link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'inherit' }}>
+      
       <ArticleContainer>
-        <TextColumn>
-        <Title>{article.article_section.toUpperCase()}: {article.article_title}</Title>
-        <Author>BY {article.article_authors.toUpperCase()}</Author>
-        </TextColumn>
-        <ImageColumn>
-          <Image src={article.image_url} alt="Article" />
-        </ImageColumn>
-        <DateWrapper>
-          <Month>{month}</Month>
-          <Day>{day}</Day>
-        </DateWrapper>
+        <SectionContainer>SECTION | SUBSECTION</SectionContainer>
+        <ImageContainer>
+          <Elispe>
+            <DateContainer> Jan <DateNumber> 05 </DateNumber></DateContainer>
+          </Elispe>
+          <StyledImage src={article.image_url}/>
+        </ImageContainer>
+        <ArticleTitle>ARTICLE TITLE HERE</ArticleTitle>
+        <ArticleAuthor>ARTICLE AUTHOR</ArticleAuthor>
       </ArticleContainer>
+
+
+
+
+
+
     </a>
   );
 };
 
-
-export default LeftArticleTemplate;
+export default RightArticleTemplate;
 
