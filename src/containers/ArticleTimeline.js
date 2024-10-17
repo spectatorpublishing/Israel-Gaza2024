@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LeftArticleTemplate from '../components/LeftArticleTemplate'; 
 import RightArticleTemplate from '../components/RightArticleTemplate';
-import PrintEdition from '../components/PrintEdition';
+
 import { articleList } from '../data/article_list';
 import { coverList } from '../data/front_cover_list';
 
@@ -24,11 +24,6 @@ const MonthTop = styled.div`
     margin: auto;
     width: 90%;
     gap: 15rem;
-`;
-
-const PrintEditionWrapper = styled.div`
-    width: 50%;
-    margin-bottom: 8rem;
 `;
 
 const MonthText = styled.div`
@@ -66,9 +61,7 @@ const ArticleTimeline = () => {
             {Object.entries(articleList).map(([month, articles], index) => (
                 <div key={month}>
                     <MonthTop isEven={index % 2 === 0}>
-                        <PrintEditionWrapper>
-                            <PrintEdition cover={coverList[month]} />
-                        </PrintEditionWrapper>
+
                         <MonthText>
                             <MonthTitle>{month}</MonthTitle>
                         </MonthText>

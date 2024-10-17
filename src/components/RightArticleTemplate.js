@@ -130,11 +130,6 @@ const RightArticleTemplate = ({ article }) => {
           <Elispe>
 
             <DateContainer> Jan <DateNumber> 05 </DateNumber></DateContainer>
-
-
-
-
-
           </Elispe>
           <StyledImage src={article.image_url}/>
         </ImageContainer>

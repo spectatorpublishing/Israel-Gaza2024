@@ -138,12 +138,6 @@ const RightArticleTemplate = ({ article }) => {
         <ArticleTitle>ARTICLE TITLE HERE</ArticleTitle>
         <ArticleAuthor>ARTICLE AUTHOR</ArticleAuthor>
       </ArticleContainer>
-
-
-
-
-
-
     </a>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import MobileArticleTemplate from '../components/MobileArticleTemplate'; 
-import PrintEdition from '../components/PrintEdition';
+
 import { articleList } from '../data/article_list';
 import { coverList } from '../data/front_cover_list';
 import ShowToggle from '../images/show-arrow.png';
@@ -122,9 +122,7 @@ const ArticleTimeline = () => {
                 return (
                     <MonthWrapper isEven={index % 2 === 0} key={month}>
                         <MonthTop isEven={index % 2 === 0}>
-                            <PrintEditionWrapper>
-                                <PrintEdition cover={coverList[month]} />
-                            </PrintEditionWrapper>
+
                             <MonthText>
                                 <MonthTitle>{month.substring(0, 3).toUpperCase()}</MonthTitle>
                             </MonthText>
