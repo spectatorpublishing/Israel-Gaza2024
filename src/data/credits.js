@@ -252,7 +252,32 @@ export const credits = {
         "title": "Staff Illustrator"
       },
     ],
-    "Copy": [
+    "Opinion": [
+      {
+        "staff_name": "Colin Roedl",
+        "title": "Editorial Page Editor"
+      },
+      {
+        "staff_name": "Sydney Goldson",
+        "title": "Deputy Editorial Page Editor"
+      },
+      {
+        "staff_name": "Milène Klein",
+        "title": "Deputy Editorial Page Editor"
+      },
+      {
+        "staff_name": "Achilles Frangos",
+        "title": "Deputy Editorial Page Editor"
+      },
+      {
+        "staff_name": "Melanie Cheung",
+        "title": "Deputy Editorial Page Editor"
+      },
+      {
+        "staff_name": "Sofia Matson",
+        "title": "Deputy Editorial Page Editor"
+      },
+    ],"Copy": [
       {
         "staff_name": "August Phillips",
         "title": "Head Copy Editor"
@@ -354,32 +379,6 @@ export const credits = {
       },{
         "staff_name": "Shivane Pratap",
         "title": "Preslotter"
-      },
-    ],
-    "Opinion": [
-      {
-        "staff_name": "Colin Roedl",
-        "title": "Editorial Page Editor"
-      },
-      {
-        "staff_name": "Sydney Goldson",
-        "title": "Deputy Editorial Page Editor"
-      },
-      {
-        "staff_name": "Milène Klein",
-        "title": "Deputy Editorial Page Editor"
-      },
-      {
-        "staff_name": "Achilles Frangos",
-        "title": "Deputy Editorial Page Editor"
-      },
-      {
-        "staff_name": "Melanie Cheung",
-        "title": "Deputy Editorial Page Editor"
-      },
-      {
-        "staff_name": "Sofia Matson",
-        "title": "Deputy Editorial Page Editor"
       },
     ]
     
