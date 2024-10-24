@@ -7,6 +7,7 @@ import Credits from  '../components/Credits';
 import MobileTimeline from '../containers/MobileTimeline';
 import LetterEditorMobile from '../containers/LetterEditoMobile.js'
 import CreditsMobile from '../components/CreditsMobile.js'
+import NewArticleTimeline from './NewArticleTimeline'
 
 const Wrapper = styled.div`
   background-color: black;
@@ -42,19 +43,17 @@ const Home = () => {
   return (
     <Wrapper>
       <Heading/>
-
+      
       <LowerWrapper>
         <LetterEditor />
         <LetterEditorMobile/>
-        
-        <VerticalLine/>
-
-        <ArticleTimeline />
+        <NewArticleTimeline/>
         <MobileTimeline />
       </LowerWrapper>
 
       <Credits></Credits>
       <CreditsMobile></CreditsMobile>
+  
     </Wrapper>
   );
 };
