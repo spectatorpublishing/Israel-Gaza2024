@@ -8,7 +8,7 @@ const FullPageImage = styled.div`
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 750px; 
+  height: 800px; 
   opacity: 1.5;
   position: relative; 
   padding: 0;
