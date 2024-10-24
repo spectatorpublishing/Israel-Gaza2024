@@ -9,7 +9,7 @@ import { articleList } from '../data/article_list';
 const PageWrapper = styled.div`
     height: fit-content;
     position: relative;
-    background-color: black;
+    background-color:  #181818;
     color: white;
 
     @media only screen and (max-width: 1023px) {
@@ -59,7 +59,7 @@ const ArticlesGrid = styled.div`
 `;
 
 const ArticleContainer = styled.div`
-  
+
 `;
 
 const NewArticleTimeline = () => {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Page = styled.div`
     display: flex;
-    background-color: black;
+    background-color:  #181818;
     color: white;
     margin-bottom: 10rem;
     gap: 6rem;

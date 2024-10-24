@@ -10,7 +10,7 @@ import HideToggle from '../images/no-show-arrow.png';
 const PageWrapper = styled.div`
     height: fit-content;
     position: relative;
-    background-color: black;
+    background-color:  #181818;
     color: white;
     position: relative; 
 
