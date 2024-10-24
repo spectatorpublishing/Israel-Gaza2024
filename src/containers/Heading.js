@@ -5,8 +5,10 @@ import SpecLogoHeader from '../components/SpecLogoHeader';
 
 const FullPageImage = styled.div`
   background-image: url(${coverCollage});
+  background-size: cover;
+  background-position: center;
   width: 100%;
-  height: 880px; 
+  height: 800px; 
   opacity: 1.5;
   position: relative; 
   padding: 0;
