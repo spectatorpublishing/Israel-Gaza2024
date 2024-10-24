@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Heading from './Heading';
 import LetterEditor from './LetterEditor';
-import ArticleTimeline from './ArticleTimeline';
 import Credits from  '../components/Credits';
 import MobileTimeline from '../containers/MobileTimeline';
 import LetterEditorMobile from '../containers/LetterEditoMobile.js'
@@ -10,7 +9,7 @@ import CreditsMobile from '../components/CreditsMobile.js'
 import NewArticleTimeline from './NewArticleTimeline'
 
 const Wrapper = styled.div`
-  background-color: black;
+  background-color: #181818;
 `;
 
 const LowerWrapper = styled.div`
